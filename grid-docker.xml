@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> -->
+
+
+<suite name="Suite" thread-count="2" parallel="tests"> <!--  make parallel execution: mở song song 3 trình duyệt phía dưới-->
+  <!-- before test -->
+  <listeners>
+		<listener class-name="utilities.ExtentReportManager"/>
+	</listeners>
+  
+   <test name="Linux-Chrome">
+  	<parameter name="os" value="Linux" />		<!-- operating system -->
+  	<parameter name="browser" value="chrome" />
+  
+    <classes>
+      <class name="testCases.TC001_AccountRegistrationTest"/>
+      <class name="testCases.TC002_LoginTest"/>
+    </classes>
+  </test>  <!-- Test -->
+  
+ <!--  <test name="Linux-Firefox">
+  	<parameter name="os" value="Linux" />		operating system
+  	<parameter name="browser" value="firefox" />
+  
+    <classes>
+      <class name="testCases.TC001_AccountRegistrationTest"/>
+      <class name="testCases.TC002_LoginTest"/>
+    </classes>
+  </test> --> 
+  
+  
+</suite> <!-- Suite -->
